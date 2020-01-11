@@ -26,7 +26,7 @@ class App extends Component {
         try {
             if (topn) {
                 this.setState({ loading: true });
-                const response = await axios.post(`http://localhost:3005/wordfreq/${topn}`);
+                const response = await axios.post(`https://ttt-wordfreq-api.herokuapp.com/wordfreq/${topn}`);
                 this.setState({ data: response.data.data, loading: false, error: null });
             }
         } catch (error) {
