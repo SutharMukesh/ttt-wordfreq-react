@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React WordFreq
 
-## Available Scripts
+Display's the top N words and their frequency of occurrence  
 
-In the project directory, you can run:
+> **Note:**  
+> Please be patient, the website can take time to load  
+> As the traffic is low it may go to **dyno sleep**  
 
-### `npm start`
+## Process
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- An Input field which accepts a number  
+    <img src="./Screenshots/input.png" alt="Input" width="400"/>
+- When no value is passed in input field  
+    <img src="./Screenshots/input_when_no_val.png" alt="input_when_no_val" width="400"/>  
+- On Send button pressed, a request is made to [backend](https://github.com/SutharMukesh/ttt-wordfreq-api)  
+    <img src="./Screenshots/input_req_send.png" alt="input_req_send" width="400"/>  
+- If any Error occured on backend  
+    <img src="./Screenshots/when_backend_error.png" alt="when_backend_error" width="400"/>  
+- Backend returns a list of top n words and their respective count which are displayed in a tabular format  
+    <img src="./Screenshots/output_table.png" alt="output_table" width="400"/>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Components
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. **input**
+   - Takes input value
+   - **Send button** which sends request to backend.
+2. **output**
+   - Display response data in **table**

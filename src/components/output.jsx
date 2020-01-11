@@ -7,8 +7,10 @@ import React from 'react';
 const OutputTable = (props) => {
     if (props.data) {
         return (
-            <div className="container" style={{ width: '30rem' }}>
-                <table className="table table-hover ">
+            <div
+                className="container"
+            >
+                <table className="table table-bordered table-sm table-hover ">
                     <thead>
                         <tr>
                             <th scope="col">Word</th>

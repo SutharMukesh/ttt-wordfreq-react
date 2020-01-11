@@ -8,7 +8,6 @@ const InputNumber = (props) => (
     <>
         <form
             className="container"
-            style={{ width: '30rem' }}
             onSubmit={props.getNumber}
         >
             <div className="form-group">
