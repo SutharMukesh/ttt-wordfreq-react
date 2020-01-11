@@ -26,3 +26,11 @@ Display's the top N words and their frequency of occurrence
    - **Send button** which sends request to backend.
 2. **output**
    - Display response data in **table**
+
+## Libraries Used
+
+- react
+- react-dom
+- react-scripts
+- bootstrap
+- axios

@@ -16,14 +16,16 @@ class App extends Component {
         };
     }
 
-    getNumber = (event) => {
-        event.preventDefault();
-        const topn = event.target.inputnumber.value;
-        this.getTopNWords(topn);
-    }
-
-    getTopNWords = async (topn) => {
+    /**
+     * Get Number from form data on submit event
+     * sends request to backend with the topn number
+     * sets the response data to state
+     * @param event - form event
+     */
+    getNumber = async (event) => {
         try {
+            event.preventDefault();
+            const topn = event.target.inputnumber.value;
             if (topn) {
                 this.setState({ loading: true });
                 const response = await axios.post(`https://ttt-wordfreq-api.herokuapp.com/wordfreq/${topn}`);
