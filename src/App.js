@@ -1,44 +1,50 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
-import InputNumber from "./components/input"
-import OutputTable from "./components/output"
 import axios from 'axios';
+import InputNumber from './components/input';
+import OutputTable from './components/output';
 
 class App extends Component {
-    state = {
-        loading:false,
-        data:null,
-        error:null,
+    constructor() {
+        super();
+        this.state = {
+            loading: false,
+            data: null,
+            error: null,
+        };
     }
-    getNumber=(event)=>{
+
+    getNumber = (event) => {
         event.preventDefault();
-        let topn = event.target.inputnumber.value;
-        this.getTopNWords(topn)
+        const topn = event.target.inputnumber.value;
+        this.getTopNWords(topn);
     }
 
-    getTopNWords=async(topn)=>{
+    getTopNWords = async (topn) => {
         try {
-            if(topn){
-                this.setState({loading:true})
-                let response = await axios.post("http://localhost:3005/wordfreq/"+topn)
-                this.setState({data:response.data.data,loading:false,error:null})
-
+            if (topn) {
+                this.setState({ loading: true });
+                const response = await axios.post(`http://localhost:3005/wordfreq/${topn}`);
+                this.setState({ data: response.data.data, loading: false, error: null });
             }
         } catch (error) {
-            this.setState({error:error.toString(),loading:false})
+            this.setState({ error: error.toString(), loading: false });
         }
     }
 
     render() {
         return (
             <div className="container d-flex flex-column p-4 mt-5">
-                <InputNumber getNumber={this.getNumber} loading={this.state.loading}/>
-                <OutputTable data={this.state.data}/>
-                {(this.state.error)?(
-                    <div class=" container alert alert-danger" style={{ width: "28rem" }}>
-                        <h5 class="alert-heading">Error!</h5>
+                <InputNumber getNumber={this.getNumber} loading={this.state.loading} />
+                <OutputTable data={this.state.data} />
+                {(this.state.error) ? (
+                    <div className=" container alert alert-danger" style={{ width: '28rem' }}>
+                        <h5 className="alert-heading">Error!</h5>
                         <p>{this.state.error}</p>
                     </div>
-                ):<React.Fragment/>}
+                ) : <></>}
             </div>
         );
     }

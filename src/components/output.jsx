@@ -1,34 +1,33 @@
-import React from "react";
+/* eslint-disable linebreak-style */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/prop-types */
+import React from 'react';
 
-const OutputTable = props => {
-    if(props.data){
+const OutputTable = (props) => {
+    if (props.data) {
         return (
-          <div className="container" style={{ width: "30rem" }}>
-            <table class="table table-hover ">
-              <thead>
-                <tr>
-                  <th scope="col">Word</th>
-                  <th scope="col">Count</th>
-                </tr>
-              </thead>
-              <tbody>
-                  {props.data.map((wc)=>{
-                      return (
+            <div className="container" style={{ width: '30rem' }}>
+                <table className="table table-hover ">
+                    <thead>
                         <tr>
-                          <th scope="row">{wc.word}</th>
-                          <td>{wc.count}</td>
+                            <th scope="col">Word</th>
+                            <th scope="col">Count</th>
                         </tr>
-                      );
-                  })}
-              </tbody>
-            </table>
-          </div>
+                    </thead>
+                    <tbody>
+                        {props.data.map((wc) => (
+                            <tr>
+                                <th scope="row">{wc.word}</th>
+                                <td>{wc.count}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         );
-    }else{
-        return(
-            <React.Fragment/>
-        )
     }
+    return <></>;
 };
 
 export default OutputTable;
