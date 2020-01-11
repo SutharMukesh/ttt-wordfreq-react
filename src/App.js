@@ -38,7 +38,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="container d-flex flex-column p-4 mt-5">
+            <div className="card container shadow-sm d-flex flex-column p-4 mt-5" style={{width:"30rem"}}>
                 <InputNumber getNumber={this.getNumber} loading={this.state.loading} />
                 <OutputTable data={this.state.data} />
                 {(this.state.error) ? (
